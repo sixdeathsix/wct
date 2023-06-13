@@ -1,0 +1,8 @@
+{% extends 'main/layouts/layout.html' %}
+
+{% block title %}Точность прогноза обводнённости{% endblock %}
+
+{% block content %}
+    {{ fig|safe }}
+    <h2 class="center">Среднее отклонение обводнённости: {{ percent|safe }}</h2>
+{% endblock %}

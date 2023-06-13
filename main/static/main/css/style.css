@@ -1,0 +1,156 @@
+*, 
+*:before, 
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.center {
+    width: 100%;
+    text-align: center;
+}
+
+aside {
+    width: 25%;
+    height: 100vh;
+    background: #000;
+    padding: 1%;
+}
+
+aside > .nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav > a {
+    color: #fff;
+    text-decoration: none;
+    margin: 5px;
+    font-size: 18px;
+    transition: linear .1s;
+}
+
+.nav > a:hover {
+    font-size: 20px;
+}
+
+main {
+    margin: 0 auto;
+}
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+
+}
+
+.auth {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-form {
+    width: 35%;
+}
+
+select {
+    padding: 5px 10px;
+}
+
+.input-form {
+    width: 100%;
+    margin: 0 auto;
+    padding: 5%;
+    border-radius: 0 0 5px 5px ;
+    border: solid grey;
+    border-width: 0 1.5px 1.5px;
+}
+
+.input-form > input, button {
+    width: 100%;
+    padding: 8px 15px;
+    margin: 10px 0;
+    border: 1px solid grey;
+    outline: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.input-form > button {
+    cursor: pointer;
+    background-color: #fff;
+    font-size: 20px;
+    transition: linear .2s;
+    
+}
+
+.input-form > button:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.auth-title {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    background: #000;
+    color: #fff;
+    border-radius: 5px 5px 0 0; 
+}
+
+.errorlist > li {
+    list-style: none;
+    padding-bottom: 15px;
+}
+
+.user {
+    width: calc(25% - 40px);
+    position: absolute;
+    bottom: 8%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.user > h3 {
+    margin-left: 10px;
+}
+
+.logout {
+    width: calc(25% - 40px);
+    position: absolute;
+    bottom: 0;
+    padding: 15px 0;
+}
+
+.logout > a {
+    text-align: center;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid white;
+    padding: 10px 15px;
+    transition: linear .2s;
+}
+
+.logout > a:hover {
+    opacity: .6;
+}

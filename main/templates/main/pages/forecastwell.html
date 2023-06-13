@@ -1,0 +1,13 @@
+{% extends 'main/layouts/layout.html' %}
+
+{% block title %}Прогноз нефункционирующих скважин{% endblock %}
+
+{% block content %}
+
+    {% if isNull %}
+        <h2>У вас нет нефункционирующих скважин</h2>
+    {% else %}
+        {{ fig|safe }}
+    {% endif %}
+
+{% endblock %}

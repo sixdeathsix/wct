@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="nav">
+                <a href="{% url 'home' %}">Главная</a>
+                <a href="{% url 'predicted' %}">График точности прогноза</a>
+                <a href="{% url 'importance' %}">График важности признаков</a>
+                <a href="{% url 'difference' %}">Точность прогноза обводнённости</a>
+                <a href="{% url 'forecastwell' %}">Прогноз нефункционирующих скважин</a>
+                <select class="select">
+                    <option value="">Выберите скажину</option>
+                    {% for well in wells %}
+                        <option value="{{ well.id }}">{{ well.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="user">
+                Пользователь: <h3> {{ request.user.get_full_name  }}</h3>
+            </div>
+            <div class="logout">
+                <a href="{% url 'logout' %}?next={{ request.path }}">Выход</a>
+            </div>
+        </aside>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+
+    <script>
+        let select = document.querySelector('.select');
+
+        select.addEventListener('change', (e) => {
+            location.href = `/onewell/${e.target.value}`
+        });
+    </script>
+</body>
+</html>
